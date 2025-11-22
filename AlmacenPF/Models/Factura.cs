@@ -13,8 +13,10 @@ namespace AlmacenPF.Models
 
         public DateTime Fecha { get; set; }
 
-        [MaxLength(100)]
-        public string Cliente { get; set; }
+        public int? IdCliente { get; set; }
+
+        [ForeignKey("IdCliente")]
+        public Cliente Cliente { get; set; }
 
         public decimal Total { get; set; }
 

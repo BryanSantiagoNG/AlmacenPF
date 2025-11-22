@@ -12,7 +12,7 @@ namespace AlmacenPF.Models
         public DbSet<DetallePedido> DetallePedidos { get; set; }
         public DbSet<Factura> Facturas { get; set; }
         public DbSet<DetalleFactura> DetalleFacturas { get; set; }
-
+        public DbSet<Cliente> Clientes { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
@@ -21,7 +21,6 @@ namespace AlmacenPF.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Claves primarias
             modelBuilder.Entity<Usuario>().HasKey(u => u.IdUsuario);
             modelBuilder.Entity<Proveedor>().HasKey(p => p.IdProveedor);
             modelBuilder.Entity<Distribuidor>().HasKey(d => d.IdDistribuidor);
